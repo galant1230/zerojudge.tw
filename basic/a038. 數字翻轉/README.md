@@ -58,3 +58,30 @@ int main() {
     return 0;
 }
 ```
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char num[100];
+    scanf("%s", num);
+
+    int len = strlen(num);
+    //練習一下malloc 
+    char* reversed = (char*)malloc((len + 1) * sizeof(char));  // +1 給 \0
+
+    // 反轉字串
+    for (int i = 0; i < len; i++) {
+        reversed[i] = num[len - 1 - i];
+    }
+    reversed[len] = '\0';  // 加上結尾的 \0
+
+    int result = atoi(reversed);
+    printf("%d\n", result);
+
+    free(reversed);
+    return 0;
+}
+```
