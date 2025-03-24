@@ -85,3 +85,29 @@ int main() {
     return 0;
 }
 ```
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char str[1000];
+  scanf("%s", str);
+
+  int len = strlen(str);
+
+  // 反轉字串
+  for (int i = 0; i < len / 2; i++) {
+    char temp = str[i];
+    str[i] = str[len - i - 1];
+    str[len - i - 1] = temp;
+  }
+
+  // 轉換為整數，去除前導零
+  int result = atoi(str);
+  printf("%d\n", result);
+
+  return 0;
+}
+```
